@@ -1,0 +1,23 @@
+{
+  "name": "preact-forms-helper",
+  "version": "0.0.4",
+  "description": "Create and control your forms in your Preact application more easily !",
+  "main": "src/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^22.4.3"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexandreCantin/preact-forms-helper.git"
+  },
+  "keywords": [
+    "form",
+    "preact"
+  ],
+  "author": "Alexandre CANTIN <cantin.alexandre@gmail.com>",
+  "license": "MIT"
+}
