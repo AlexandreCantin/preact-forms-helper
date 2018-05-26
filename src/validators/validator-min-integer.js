@@ -6,7 +6,7 @@ export default class ValidatorMinInteger {
 
   isValid(value) {
     // No data : validation disable
-    if(value === '') return true;
+    if(!value) return true;
 
     return this.min <= value;
   }

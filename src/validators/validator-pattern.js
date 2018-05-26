@@ -6,7 +6,7 @@ export default class ValidatorPattern {
 
   isValid(value) {
     // No data : validation disable
-    if(value === '') return true;
+    if(!value) return true;
 
     return this.regex.test(value);
   }

@@ -12,7 +12,7 @@ export default class ValidatorDateAfter {
 
   isValid(value) {
     // No data : validation disable
-    if(value === '') return true;
+    if(!value) return true;
 
     let date = new Date(value);
     return toSimpleDate(date) > this.date;

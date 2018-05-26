@@ -7,7 +7,7 @@ export default class ValidatorMaxInteger {
 
   isValid(value) {
     // No data : validation disable
-    if(value === '') return true;
+    if(!value) return true;
 
     return value <= this.max;
   }

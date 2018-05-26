@@ -16,6 +16,12 @@ test('Required ==> Value = "pouac"; Should return true', () => {
 test('Required ==> Value = ""; Should return false', () => {
   expect(Validators.required().isValid("")).toBeFalsy();
 });
+test('Required ==> Value = null; Should return false', () => {
+  expect(Validators.required().isValid(null)).toBeFalsy();
+});
+test('Required ==> Value = undefined; Should return false', () => {
+  expect(Validators.required().isValid(undefined)).toBeFalsy();
+});
 test('Required ==> Value = []; Should return false', () => {
   expect(Validators.required().isValid([])).toBeFalsy();
 });

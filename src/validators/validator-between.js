@@ -8,7 +8,7 @@ export default class ValidatorBetween {
 
   isValid(value) {
     // No data : validation disable
-    if(value === '') return true;
+    if(!value) return true;
 
     return this.min <= value && value <= this.max;
   }
