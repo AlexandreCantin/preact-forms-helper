@@ -16,8 +16,7 @@ export default class Form {
       else this.values[inputName] = inputData.multiple ? [] : null;
 
       // Validators
-      let inputValidators = inputData.validators || [];
-      this.validators[inputName] = inputData.validators;
+      this.validators[inputName] = inputData.validators || [];
 
       // Touched
       this.touched[inputName] = false;
@@ -27,6 +26,16 @@ export default class Form {
     }
 
     return this;
+  }
+
+  updateValidators(newFormValidators) {
+    for(let inputName in newFormValidators) {
+      this.checkFieldExists(inputName);
+
+      let inputData = newFormValidators[inputName];
+      this.validators[inputName] = inputData.validators || [];
+      this.validateField(inputName, this.values[inputName] || '');
+    }
   }
 
   saveField(name, value) {

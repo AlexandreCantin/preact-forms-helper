@@ -1,6 +1,7 @@
 import Validators from "../src/validators";
 import DateBefore from "../src/validators/validator-date-before";
 import DateAfter from "../src/validators/validator-date-after";
+import Form from "../src/form";
 
 
 // Required
@@ -289,3 +290,16 @@ test('DateBefore  ==> Value = "2018-01-01"; Should return false', () => {
 test('DateBefore ==> ; Should throw error', () => {
   expect(() => new DateAfter('dateBefore', 'INVALID_DATE')).toThrowError();
 });
+
+
+// Update validators
+test('form => start but get valid after formValidatorsUpdate', () => {
+  let form = new Form({
+    name: { value: '', validators: [Validators.required()] },
+  });
+  expect(form.isValid()).toBeFalsy();
+
+  form.updateValidators({ name: { validators: [] } })
+  form.values.name = 'Alexandre';
+  expect(form.isValid()).toBeTruthy();
+})

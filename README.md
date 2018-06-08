@@ -20,6 +20,7 @@ Note : This project has been tested only in Preact, but it should work in React 
 | Method | Description |
 | :--- | :--- |
 | **hasErrors('fieldName')** | Return true if the given field has at least one error |
+| **updateValidators(newFormValidatorsJSON)** | Update existing validators - _form will be re-validate automatically_ |
 | **getErrors('fieldName')** | Return all the errors associated to the given field |
 | **isTouched('fieldName')** | Return if a field has been modified by an user |
 | **hasError('fieldName','errorName')** | Return true if the given field has the given error |
