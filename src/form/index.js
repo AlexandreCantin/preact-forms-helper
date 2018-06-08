@@ -106,7 +106,7 @@ export default class Form {
   hasError = (fieldName, errorName) => {
     this.checkFieldExists(fieldName);
     if(!this.errors[fieldName]) return false;
-    return this.errors.indexOf(err => err === errorName) !== -1;
+    return this.errors[fieldName].indexOf(errorName) !== -1;
   }
 
   isSelected = (fieldName, value) => {
