@@ -300,6 +300,6 @@ test('form => start but get valid after formValidatorsUpdate', () => {
   expect(form.isValid()).toBeFalsy();
 
   form.updateValidators({ name: { validators: [] } })
-  form.values.name = 'Alexandre';
+  form.setValue('name', 'Alexandre');
   expect(form.isValid()).toBeTruthy();
 })

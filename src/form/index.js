@@ -120,6 +120,12 @@ export default class Form {
     return this.values[fieldName];
   }
 
+  setValue = (fieldName, value, component) => {
+    this.checkFieldExists(fieldName);
+    this.values[fieldName] = value;
+    this.validateField(fieldName, value, component ? () => component.forceUpdate() : undefined);
+  }
+
   getValues = () => this.values;
   isValid = () => this.valid;
 }

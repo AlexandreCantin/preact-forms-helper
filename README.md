@@ -25,7 +25,8 @@ Note : This project has been tested only in Preact, but it should work in React 
 | **isTouched('fieldName')** | Return if a field has been modified by an user |
 | **hasError('fieldName','errorName')** | Return true if the given field has the given error |
 | **getValues()** | Return the form values |
-| **getValue('fieldName)** | Return the saved value |
+| **getValue('fieldName')** | Return the saved value |
+| **setValue('fieldName','value', component?)** | Update a form value programatically - _form will be re-validate automatically_ |
 | **isValid()** | Return if the form is currently valid |
 | **isSelected('fieldName','value')** | Return true if the current value of the given field is equals the entry value (Useful when dealing with checkboxes and radio buttons) |
 
