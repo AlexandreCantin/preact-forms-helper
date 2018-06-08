@@ -1,6 +1,6 @@
 {
   "name": "preact-forms-helper",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Create and control your forms in your Preact application more easily !",
   "main": "src/index.js",
   "dependencies": {
