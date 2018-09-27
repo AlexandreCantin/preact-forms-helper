@@ -3,12 +3,11 @@
   "version": "0.7.0",
   "description": "Create and control your forms in your Preact application more easily !",
   "main": "src/index.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-env": "^2.4.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "jest": "^22.4.3"
+    "jest": "^23.6.0"
   },
   "scripts": {
     "test": "jest"
