@@ -8,27 +8,27 @@ import ValidatorMaxLength from "./validator-max-length";
 import ValidatorDateBefore from "./validator-date-before";
 import ValidatorDateAfter from "./validator-date-after";
 
-import { toSimpleDate, getToday, getTomorrow } from '../helpers/date-helpers'
+import { getToday } from '../helpers/date-helpers'
 
 export default class Validators {
-  static minInteger = (number) => new ValidatorMinInteger(number);
-  static maxInteger = (number) => new ValidatorMaxInteger(number);
-  static between = (min, max) => new ValidatorBetween(min, max);
+  static minInteger(number) { return new ValidatorMinInteger(number) };
+  static maxInteger(number) { return new ValidatorMaxInteger(number) };
+  static between(min, max) { return new ValidatorBetween(min, max) };
 
-  static minLength = (length) => new ValidatorMinLength(length);
-  static maxLength = (length) => new ValidatorMaxLength(length);
+  static minLength(length) { new ValidatorMinLength(length) };
+  static maxLength(length) { new ValidatorMaxLength(length) };
 
-  static required = () => new ValidatorRequired();
+  static required() { return new ValidatorRequired() };
 
-  static pattern = (pattern) => new ValidatorPattern('pattern', pattern);
-  static email = () => new ValidatorPattern('email', /^([a-zA-Z0-9_\.-]+)@([\da-zA-Z0-9\.-]+)\.([a-z\.]{2,6})$/);
-  static url = () => new ValidatorPattern('url', /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/);
-  static alpha = () => new ValidatorPattern('alpha', /^[a-zA-Z]*$/);
-  static alphaDash = () => new ValidatorPattern('alphaDash', /^[a-zA-Z_]*$/);
-  static numeric = () => new ValidatorPattern('numeric', /^[0-9]*$/);
+  static pattern(pattern) { return new ValidatorPattern('pattern', pattern) };
+  static email() { return new ValidatorPattern('email', /^([a-zA-Z0-9_\.-]+)@([\da-zA-Z0-9\.-]+)\.([a-z\.]{2,6})$/) };
+  static url() { return new ValidatorPattern('url', /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/) };
+  static alpha() { return new ValidatorPattern('alpha', /^[a-zA-Z]*$/) };
+  static alphaDash() { return new ValidatorPattern('alphaDash', /^[a-zA-Z_]*$/) };
+  static numeric() { return new ValidatorPattern('numeric', /^[0-9]*$/) };
 
-  static dateBefore = (date) => new ValidatorDateBefore('dateBefore', date);
-  static dateAfter = (date) => new ValidatorDateAfter('dateAfter', date);
-  static dateBeforeToday = () => new ValidatorDateBefore('dateBeforeToday', getToday());
-  static dateAfterToday = () => new ValidatorDateAfter('dateAfterToday', getToday());
+  static dateBefore(date) { return new ValidatorDateBefore('dateBefore', date) };
+  static dateAfter(date) { return new ValidatorDateAfter('dateAfter', date) };
+  static dateBeforeToday() { return new ValidatorDateBefore('dateBeforeToday', getToday()) };
+  static dateAfterToday() { return new ValidatorDateAfter('dateAfterToday', getToday()) };
 }

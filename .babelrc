@@ -8,7 +8,6 @@
     "transform-class-properties",
     "transform-decorators",
     "transform-react-constant-elements",
-    "transform-react-inline-elements",
-    "@babel/plugin-proposal-class-properties"
+    "transform-react-inline-elements"
   ]
 }
