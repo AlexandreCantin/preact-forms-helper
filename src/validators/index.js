@@ -15,8 +15,8 @@ export default class Validators {
   static maxInteger(number) { return new ValidatorMaxInteger(number) };
   static between(min, max) { return new ValidatorBetween(min, max) };
 
-  static minLength(length) { new ValidatorMinLength(length) };
-  static maxLength(length) { new ValidatorMaxLength(length) };
+  static minLength(length) { return new ValidatorMinLength(length) };
+  static maxLength(length) { return new ValidatorMaxLength(length) };
 
   static required() { return new ValidatorRequired() };
 
