@@ -1,3 +1,10 @@
+```
+
+/!\ DISCLAIMER : Not really maintain : use at your own risks (or fork it :)) /!\
+
+```
+
+
 # Preact forms helper :first_quarter_moon_with_face: :first_quarter_moon_with_face:
 
 Create and control your forms in your Preact application more easily !
