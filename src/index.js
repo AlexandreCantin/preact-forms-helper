@@ -1,4 +1,4 @@
-export const validateField = (component, form, fieldName) => {
+export const validateField = (updateFunc, form, fieldName) => {
   return function(event) {
     // Name
     fieldName = fieldName || event.target.name;
@@ -15,7 +15,7 @@ export const validateField = (component, form, fieldName) => {
 
     let newValue = form.saveField(fieldName, value);
     // Check and forceUpdate
-    form.validateField(fieldName, newValue, () => component.forceUpdate())
+    form.validateField(fieldName, newValue, () => updateFunc())
   };
 }
 

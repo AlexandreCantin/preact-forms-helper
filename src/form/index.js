@@ -120,10 +120,10 @@ export default class Form {
     return this.values[fieldName];
   }
 
-  setValue(fieldName, value, component) {
+  setValue(fieldName, value, updateFunc) {
     this.checkFieldExists(fieldName);
     this.values[fieldName] = value;
-    this.validateField(fieldName, value, component ? () => component.forceUpdate() : undefined);
+    this.validateField(fieldName, value, updateFunc ? () => updateFunc() : undefined);
   }
 
   getValues() { return this.values; }

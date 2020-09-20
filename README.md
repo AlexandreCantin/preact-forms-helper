@@ -33,7 +33,7 @@ Note : This project has been tested only in Preact, but it should work in React 
 | **hasError('fieldName','errorName')** | Return true if the given field has the given error |
 | **getValues()** | Return the form values |
 | **getValue('fieldName')** | Return the saved value |
-| **setValue('fieldName','value', component?)** | Update a form value programatically - _form will be re-validate automatically_ |
+| **setValue('fieldName','value', updateFunc?)** | Update a form value programatically - _form will be re-validate automatically_ |
 | **isValid()** | Return if the form is currently valid |
 | **isSelected('fieldName','value')** | Return true if the current value of the given field is equals the entry value (Useful when dealing with checkboxes and radio buttons) |
 
@@ -106,12 +106,12 @@ import { Form, Validators, validateField } from 'preact-forms-helpers';
 
 ```
 
-To finish, we create the input field and call the _validateField_ function (with component and form as argument)
+To finish, we create the input field and call the _validateField_ function (with component update function and form as argument)
 ```
 import { Form, Validators, validateField } from 'preact-forms-helpers';
 
 ...
-<input type="text" name="firstname" onInput={validateField(this, form)} />
+<input type="text" name="firstname" onInput={validateField(this.forceUpdate, form)} />
 ...
 ```
 What will happen ? On every input from user, the form will be updated, giving you if :
@@ -122,7 +122,7 @@ Then the component will be _forceUpdate()_
 
  **Important :**
 The library make the connection between between the form class property and the input by using the input _name_ attribute. As you can see, we got `firstname: { validators: [...] }` and `<input type="text" name="firstname" />`.  
-If you want to use different name between the property and the input, _validateField_ accepts a third argument : `onInput={validateField(this, form, 'myCustomPropertyName')}`
+If you want to use different name between the property and the input, _validateField_ accepts a third argument : `onInput={validateField(this.forceUpdate, form, 'myCustomPropertyName')}`
 
 To finish, you can check global state of the form by using `this.state.form.isValid()`
 ```
