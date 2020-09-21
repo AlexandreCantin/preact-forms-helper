@@ -20,7 +20,7 @@ declare module "preact-forms-helper" {
     constructor(formData: T);
     updateValidators(newFormValidators: T): void;
     saveField<K extends keyof T>(name: K, value: GetType<GetFieldValue<T[K]>>): GetFieldValue<T[K]>;
-    validateField<K extends keyof T>(name: K, value: GetFieldValue<T[K]>, forceUpdate: boolean): void;
+    validateField<K extends keyof T>(name: K, value: GetFieldValue<T[K]>, forceUpdateFn: Function): void;
     checkFieldExists<K extends keyof T>(name: K): boolean;
     updateFormStatus(): void;
     hasErrors<K extends keyof T>(name: K): boolean;
@@ -29,7 +29,7 @@ declare module "preact-forms-helper" {
     hasError<K extends keyof T>(name: K, errorName: string): boolean;
     isSelected<K extends keyof T>(name: K, value: GetType<GetFieldValue<T[K]>>): boolean;
     getValue<K extends keyof T>(name: K): GetFieldValue<T[K]>;
-    setValue<K extends keyof T>(name: K, value: GetFieldValue<T[K]>, component: Preact.AnyComponent): void;
+    setValue<K extends keyof T>(name: K, value: GetFieldValue<T[K]>, updateFunc: Function): void;
     getValues(): boolean;
     isValid(): boolean;
   }
